@@ -1,0 +1,17 @@
+<li [ngClass]="{'list-group-item': true,
+				'list-group-item-success': postLikes > 0,
+				'list-group-item-danger' : postLikes < 0}">
+
+	<div class="row">
+		<div class="col-sm-6"><p class="bg-info">{{postName}}</p></div>
+		<div class="col-sm-6" style="text-align:right"><p class="bg-info">Posté le : {{postDate | date:'short'}}</p></div>
+	</div>
+
+	<p> {{getPostContent()}} </p>
+	
+	<div class="btn-group">
+		<button type="button" class="btn btn-success" (click) = "like()"> J'aime ! </button>
+		<button type="button" class="btn btn-danger" (click) = "dislike()"> J'aime pas ! </button>
+	</div> 
+
+</li>
